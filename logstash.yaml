@@ -4,7 +4,7 @@ metadata:
   name: logstash
   annotations:
     version: latest
-    description: "Customized version of Logstash"
+    description: "Logstash version 8.7.0"
 spec:
   components:
     - name: logstash
