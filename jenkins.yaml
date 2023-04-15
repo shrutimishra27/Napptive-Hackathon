@@ -1,0 +1,48 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: jenkins
+  annotations:
+    version: v2.387.2
+    description: "Customized version of jenkins"
+spec:
+  components:
+    - name: jenkins
+      type: webservice
+      properties:
+        image: jenkins/jenkins:2.387.2
+        ports:
+        - port: 8080
+          expose: true
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 10
+      traits:
+        - type: storage # Set to storage
+          properties:
+            emptyDir: # EmptyDir type storage
+              - name: vol # The name of the volume
+                mountPath: /jenkins
+        - type: napptive-ingress
+          properties:
+            name: jenkins-ingress
+            port: 8080
+            path: /
+        - type: resource
+          properties:
+            cpu: 0.5
+            memory: "500M"
+            requests: 
+              cpu: 0.5
+              memory: "500M"
+            limits:
+              cpu: 0.95
+              memory: "950M"
+  policies:
+    - name: healthscope-policy # policy name
+      type: health 
+      properties:
+        probeInterval: 30 #  health checking interval, 30s by default
+        probeTimeout: 10 #  health checking timeout, 10s by default
