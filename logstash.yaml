@@ -1,0 +1,48 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: logstash
+  annotations:
+    version: latest
+    description: "Customized version of Logstash"
+spec:
+  components:
+    - name: logstash
+      type: webservice
+      properties:
+        image: docker.elastic.co/logstash/logstash:8.7.0
+        ports:
+          - port: 5044
+            expose: true
+        livenessProbe:
+          tcpSocket:
+            port: 5044
+          initialDelaySeconds: 15
+          periodSeconds: 10
+      traits:
+        - type: storage
+          properties:
+            emptyDir:
+              - name: vol
+                mountPath: /logstash
+        - type: napptive-ingress
+          properties:
+            name: logstash-ingress
+            port: 5044
+            path: /
+        - type: resource
+          properties:
+            cpu: 0.5
+            memory: "500M"
+            requests:
+              cpu: 0.5
+              memory: "500M"
+            limits:
+              cpu: 0.95
+              memory: "950M"
+  policies:
+    - name: healthscope-policy
+      type: health
+      properties:
+        probeInterval: 30
+        probeTimeout: 10
