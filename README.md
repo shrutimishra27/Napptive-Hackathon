@@ -1,6 +1,6 @@
 # InfluxDB
 
-![eInfluxDB Logo](https://github.com/influxdata/influxdb/blob/master/assets/influxdb-logo.png?raw=true)
+![eInfluxDB Logo](https://github.com/Shruti-Mishra27/Napptive-Hackathon/blob/main/logoInfluxDB.png?raw=true)
 
 <h3 align="center">
     <b><a href="https://www.influxdata.com/">Website</a></b>
