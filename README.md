@@ -26,9 +26,22 @@ InfluxDB is an open source time series platform. This includes APIs for storing 
 ## How to Deploy InfluxDB on NAPPTIVE PLAYGROUND?
 
 Click on catalog and search for influxdb -> Click the Deploy button after giving it a name of your preference.
-Finally, you can see on the screen that your application is running.
 
+### Finally, you can see on the screen that your application is running.
 
+![Application Running](https://github.com/Shruti-Mishra27/Napptive-Hackathon/blob/main/AppRunning.png?raw=true)
 
+---
 
-## references
+## How to Access InfluxDB after Deployment?
+
+After deployment click on the endpoint link you will see this interface to access InfluxDB.
+
+![Web App Interface](https://github.com/Shruti-Mishra27/Napptive-Hackathon/blob/main/WebOpening.png?raw=true)
+
+---
+
+## References
+
+- https://github.com/influxdata/influxdb
+- https://docs.influxdata.com/
