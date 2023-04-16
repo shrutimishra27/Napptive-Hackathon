@@ -14,9 +14,21 @@
 
 ---
 
-## What is InfluxDB
+## What is InfluxDB?
 
 InfluxDB is an open source time series platform. This includes APIs for storing and querying data, processing it in the background for ETL or monitoring and alerting purposes, user dashboards, and visualizing and exploring the data and more. The master branch on this repo now represents the latest InfluxDB, which now includes functionality for Kapacitor (background processing) and Chronograf (the UI) all in a single binary.
 
 | Try **InfluxDB Cloud** for free and get started fast with no local setup required. Click [**here**](https://cloud2.influxdata.com/signup) to start building your application on InfluxDB Cloud. |
 |:------|
+
+---
+
+## How to Deploy InfluxDB on NAPPTIVE PLAYGROUND?
+
+Click on catalog and search for influxdb -> Click the Deploy button after giving it a name of your preference.
+Finally, you can see on the screen that your application is running.
+
+
+
+
+## references
